@@ -11,6 +11,9 @@
 
 .page-shell {
   width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
   overflow: hidden;
   background: var(--gsc-ice);
 }
