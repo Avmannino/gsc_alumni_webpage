@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./Footer.jsx";
 
 const coaches = [
   {
@@ -157,69 +158,73 @@ function PeopleList({ people, ariaLabel }) {
 
 function App() {
   return (
-    <main className="page-shell">
-      <section className="hero">
-        <img
-          className="hero__background-mark"
-          src={`${import.meta.env.BASE_URL}gsc-logo.png`}
-          alt=""
-          aria-hidden="true"
-        />
-
-        <div className="hero__content page-container">
-          <h1>
-            GSC <span>Alumni</span>
-          </h1>
-
-          <p>
-            Players, coaches, Olympians, and professionals
-            whose connection to GSC has become part of the
-            club's hockey tradition.
-          </p>
-        </div>
-      </section>
-
-      <section className="intro-section page-container">
-        <div
-          className="intro-section__accent"
-          aria-hidden="true"
-        >
-          <span />
-          <span />
-        </div>
-
-        <div className="intro-section__copy">
-          <h2>
-            A tradition shaped on and beyond Cardinal Road.
-          </h2>
-        </div>
-      </section>
-
-      <section className="people-section people-section--coaches">
-        <div className="page-container">
-          <SectionHeading
-            title="Notable former GSC coaches"
-            nowrap
+    <>
+      <main className="page-shell">
+        <section className="hero">
+          <img
+            className="hero__background-mark"
+            src={`${import.meta.env.BASE_URL}gsc-logo.png`}
+            alt=""
+            aria-hidden="true"
           />
 
-          <PeopleList
-            people={coaches}
-            ariaLabel="Notable former GSC coaches"
-          />
-        </div>
-      </section>
+          <div className="hero__content page-container">
+            <h1>
+              GSC <span>Alumni</span>
+            </h1>
 
-      <section className="people-section people-section--alumni">
-        <div className="page-container">
-          <SectionHeading title="Players and alumni" />
+            <p>
+              Players, coaches, Olympians, and professionals
+              whose connection to GSC has become part of the
+              club's hockey tradition.
+            </p>
+          </div>
+        </section>
 
-          <PeopleList
-            people={alumni}
-            ariaLabel="GSC players and alumni"
-          />
-        </div>
-      </section>
-    </main>
+        <section className="intro-section page-container">
+          <div
+            className="intro-section__accent"
+            aria-hidden="true"
+          >
+            <span />
+            <span />
+          </div>
+
+          <div className="intro-section__copy">
+            <h2>
+              A tradition shaped on and beyond Cardinal Road.
+            </h2>
+          </div>
+        </section>
+
+        <section className="people-section people-section--coaches">
+          <div className="page-container">
+            <SectionHeading
+              title="Notable former GSC coaches"
+              nowrap
+            />
+
+            <PeopleList
+              people={coaches}
+              ariaLabel="Notable former GSC coaches"
+            />
+          </div>
+        </section>
+
+        <section className="people-section people-section--alumni">
+          <div className="page-container">
+            <SectionHeading title="Players and alumni" />
+
+            <PeopleList
+              people={alumni}
+              ariaLabel="GSC players and alumni"
+            />
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
   );
 }
 
