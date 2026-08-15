@@ -312,9 +312,11 @@
 
 @media (min-width: 981px) {
   .section-heading--tight {
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(220px, 0.36fr);
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+
+    text-align: center;
   }
 
   .section-heading h2.section-heading__title--nowrap {
@@ -406,51 +408,6 @@
   width: 100%;
 }
 
-.person-row__identity {
-  display: grid;
-
-  grid-template-columns:
-    46px minmax(0, 1fr);
-
-  gap: 18px;
-  align-items: start;
-}
-
-.person-row__number {
-  padding-top: 4px;
-
-  font-family:
-    "Bebas Neue",
-    Impact,
-    sans-serif;
-
-  color:
-    rgba(
-      16,
-      43,
-      89,
-      0.32
-    );
-
-  font-size: 1.55rem;
-  letter-spacing: 0.04em;
-  line-height: 1;
-}
-
-.person-row__relationship {
-  display: block;
-
-  margin-bottom: 7px;
-
-  color: var(--gsc-red);
-
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
 .person-row h3 {
   margin: 0;
 
@@ -528,6 +485,121 @@
   border-radius: 50%;
 
   background: var(--gsc-red);
+}
+
+/* ------------------------------
+   COACHES GRID
+------------------------------ */
+
+.coaches-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 24px;
+
+  border-top:
+    2px solid
+    var(--gsc-navy);
+
+  padding-top: 34px;
+}
+
+.coach-card {
+  position: relative;
+
+  padding: 26px 28px;
+
+  border:
+    1px solid
+    var(--gsc-line);
+
+  border-radius: 4px;
+
+  background: var(--gsc-white);
+
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.coach-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: -1px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--gsc-red);
+
+  transition:
+    width 220ms ease;
+}
+
+.coach-card:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--gsc-navy);
+}
+
+.coach-card:hover::before {
+  width: 100%;
+}
+
+.coach-card__relationship {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--gsc-red);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.coach-card h3 {
+  margin: 0;
+
+  font-family:
+    "Bebas Neue",
+    Impact,
+    sans-serif;
+
+  color: var(--gsc-navy);
+
+  font-size:
+    clamp(
+      2rem,
+      3vw,
+      2.8rem
+    );
+
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.coach-card__title {
+  margin: 8px 0 0;
+
+  color: var(--gsc-blue);
+
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.45;
+  text-transform: uppercase;
 }
 
 /* ------------------------------
@@ -675,6 +747,14 @@
     padding: 70px 0 78px;
   }
 
+  .coaches-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding-top: 26px;
+  }
+
   .person-row {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -684,14 +764,6 @@
 
   .person-row__highlights {
     grid-column: auto;
-  }
-
-  .person-row__description {
-    padding-left: 64px;
-  }
-
-  .person-row__highlights {
-    padding-left: 64px;
   }
 
   .closing-section__inner {
@@ -733,20 +805,8 @@
       );
   }
 
-  .person-row__identity {
-    grid-template-columns:
-      36px minmax(0, 1fr);
-
-    gap: 13px;
-  }
-
   .person-row h3 {
     font-size: 2.15rem;
-  }
-
-  .person-row__description,
-  .person-row__highlights {
-    padding-left: 49px;
   }
 }
 

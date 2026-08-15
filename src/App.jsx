@@ -6,32 +6,27 @@ const coaches = [
     name: "Mark Messier",
     relationship: "GSC Coach",
     title: "14U Bantam A1",
-    description:
-      "A legendary NHL leader who brought championship experience behind the GSC bench.",
-    highlights: [
-      "Six-time Stanley Cup champion",
-      "Hockey Hall of Fame inductee",
-      "Former New York Rangers captain",
-    ],
   },
   {
     name: "Chris Drury",
     relationship: "GSC Coach",
     title: "10U Squirt A",
-    description:
-      "A Stanley Cup champion and former NHL captain who coached within GSC's youth program.",
-    highlights: [
-      "2001 Stanley Cup champion",
-      "Former New York Rangers captain",
-      "NHL Calder Trophy winner",
-    ],
+  },
+  {
+    name: "Mike Richter",
+    relationship: "GSC Coach",
+    title: "12U Peewee A",
+  },
+  {
+    name: "Jack Duffy",
+    relationship: "GSC Coach",
+    title: "Mite A",
   },
 ];
 
 const alumni = [
   {
     name: "Cam Atkinson",
-    relationship: "GSC Alumni",
     title: "NHL Forward",
     description:
       "A former GSC player who went on to a 13-season NHL career with Columbus, Philadelphia, and Tampa Bay.",
@@ -43,7 +38,6 @@ const alumni = [
   },
   {
     name: "John Hayden",
-    relationship: "Former GSC Wing",
     title: "Professional Forward",
     description:
       "A GSC youth hockey alumnus who advanced through Yale and into a professional career in the NHL and AHL.",
@@ -55,7 +49,6 @@ const alumni = [
   },
   {
     name: "Phil Kemp",
-    relationship: "GSC Alumni",
     title: "Professional Defenseman",
     description:
       "A Greenwich-developed defenseman who played at Yale, represented Team USA, and reached the NHL.",
@@ -67,7 +60,6 @@ const alumni = [
   },
   {
     name: "Bray Ketchum",
-    relationship: "GSC Alumni",
     title: "Professional Forward",
     description:
       "A former GSC player who competed professionally and became a championship winner in women's hockey.",
@@ -79,7 +71,6 @@ const alumni = [
   },
   {
     name: "Helen Resor",
-    relationship: "GSC Alumni",
     title: "U.S. Olympian",
     description:
       "A GSC alumna who represented the United States on the world's biggest stage and earned an Olympic medal.",
@@ -118,24 +109,14 @@ function PeopleList({ people, ariaLabel }) {
         <span>Career Highlights</span>
       </div>
 
-      {people.map((person, index) => (
+      {people.map((person) => (
         <article className="person-row" key={person.name}>
           <div className="person-row__identity">
-            <span className="person-row__number">
-              {String(index + 1).padStart(2, "0")}
-            </span>
+            <h3>{person.name}</h3>
 
-            <div>
-              <span className="person-row__relationship">
-                {person.relationship}
-              </span>
-
-              <h3>{person.name}</h3>
-
-              <p className="person-row__title">
-                {person.title}
-              </p>
-            </div>
+            <p className="person-row__title">
+              {person.title}
+            </p>
           </div>
 
           <p className="person-row__description">
@@ -150,6 +131,26 @@ function PeopleList({ people, ariaLabel }) {
               </li>
             ))}
           </ul>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function CoachesGrid({ coaches, ariaLabel }) {
+  return (
+    <div className="coaches-grid" aria-label={ariaLabel}>
+      {coaches.map((coach) => (
+        <article className="coach-card" key={coach.name}>
+          <span className="coach-card__relationship">
+            {coach.relationship}
+          </span>
+
+          <h3>{coach.name}</h3>
+
+          <p className="coach-card__title">
+            {coach.title}
+          </p>
         </article>
       ))}
     </div>
@@ -204,8 +205,8 @@ function App() {
               nowrap
             />
 
-            <PeopleList
-              people={coaches}
+            <CoachesGrid
+              coaches={coaches}
               ariaLabel="Notable former GSC coaches"
             />
           </div>
