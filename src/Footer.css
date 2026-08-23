@@ -398,10 +398,6 @@
 
   margin-top: 27px;
   padding-top: 40px;
-
-  border-top:
-    1px solid
-    var(--footer-line);
 }
 
 .footer-connect__info {
@@ -820,6 +816,9 @@
   }
 
   .footer-menu__group li a {
+    position: relative;
+    left: 5px;
+
     justify-content: center;
 
     gap: 14px;

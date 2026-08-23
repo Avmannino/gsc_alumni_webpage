@@ -745,6 +745,10 @@
     padding: 70px 0 78px;
   }
 
+  .people-section--alumni {
+    padding-top: 42px;
+  }
+
   .coaches-grid {
     grid-template-columns: 1fr;
 
