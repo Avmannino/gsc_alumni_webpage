@@ -753,15 +753,25 @@
     padding-top: 26px;
   }
 
+  .coach-card {
+    text-align: center;
+  }
+
   .person-row {
     grid-template-columns: 1fr;
     gap: 20px;
 
     padding: 27px 0 30px;
+
+    text-align: center;
   }
 
   .person-row__highlights {
     grid-column: auto;
+  }
+
+  .person-row__highlights li {
+    justify-content: center;
   }
 
   .closing-section__inner {

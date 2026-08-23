@@ -782,7 +782,7 @@
 
   .footer-logo {
     position: relative;
-    left: -8px;
+    left: -13px;
 
     width: 90px;
 
@@ -792,6 +792,10 @@
   .footer-menu h2,
   .footer-connect h2 {
     text-align: center;
+  }
+
+  .footer-menu h2 {
+    left: -5px;
   }
 
   .footer-menu h2::after,
