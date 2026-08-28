@@ -4,23 +4,70 @@ import Footer from "./Footer.jsx";
 const coaches = [
   {
     name: "Mark Messier",
-    relationship: "GSC Coach",
-    title: "14U Bantam A1",
+    title: "NHL Hall of Famer",
+    description:
+      "A legendary NHL leader who brought championship experience behind the GSC bench.",
+    highlights: [
+      "Six-time Stanley Cup champion",
+      "Hockey Hall of Fame inductee",
+      "Former New York Rangers captain",
+    ],
   },
   {
     name: "Chris Drury",
-    relationship: "GSC Coach",
-    title: "10U Squirt A",
+    title: "Former NHL Captain",
+    description:
+      "A Stanley Cup champion and former NHL captain who coached within GSC's youth program.",
+    highlights: [
+      "2001 Stanley Cup champion",
+      "Former New York Rangers captain",
+      "NHL Calder Trophy winner",
+      "New York Rangers General Manager",
+    ],
   },
   {
     name: "Mike Richter",
-    relationship: "GSC Coach",
-    title: "12U Peewee A",
+    title: "Stanley Cup Champion Goaltender",
+    description:
+      "A decorated NHL goaltender whose Stanley Cup-winning tenure with the New York Rangers made him one of the position's most recognized names.",
+    highlights: [
+      "1994 Stanley Cup champion",
+      "1996 World Cup of Hockey champion",
+      "U.S. Hockey Hall of Fame inductee",
+    ],
   },
   {
     name: "Jack Duffy",
-    relationship: "GSC Coach",
-    title: "Mite A",
+    title: "AHCA All-American Defenseman",
+    description:
+      "A Yale team captain and All-American defenseman who went on to play professional hockey before joining the GSC coaching staff.",
+    highlights: [
+      "AHCA First-Team All-American, 1992–93",
+      "Yale Hockey team captain, 1992–93",
+      "Drafted by the New York Islanders, 1991",
+    ],
+  },
+  {
+    name: "Marc Staal",
+    title: "NHL Defenseman",
+    description:
+      "A longtime NHL defenseman who anchored the New York Rangers blue line for over a decade before joining the GSC coaching staff.",
+    highlights: [
+      "First-round pick, 2005 NHL Draft (12th overall)",
+      "Over 1,000 NHL games played",
+      "2014 Eastern Conference champion, New York Rangers",
+    ],
+  },
+  {
+    name: "Riley Nash",
+    title: "NHL Forward",
+    description:
+      "A former Cornell University captain who built a long NHL career and reached the Stanley Cup Final before coaching within GSC's program.",
+    highlights: [
+      "First-round pick, 2007 NHL Draft (21st overall)",
+      "2019 Stanley Cup Finalist, Boston Bruins",
+      "Former Cornell University captain",
+    ],
   },
 ];
 
@@ -137,26 +184,6 @@ function PeopleList({ people, ariaLabel }) {
   );
 }
 
-function CoachesGrid({ coaches, ariaLabel }) {
-  return (
-    <div className="coaches-grid" aria-label={ariaLabel}>
-      {coaches.map((coach) => (
-        <article className="coach-card" key={coach.name}>
-          <span className="coach-card__relationship">
-            {coach.relationship}
-          </span>
-
-          <h3>{coach.name}</h3>
-
-          <p className="coach-card__title">
-            {coach.title}
-          </p>
-        </article>
-      ))}
-    </div>
-  );
-}
-
 function App() {
   return (
     <>
@@ -198,20 +225,6 @@ function App() {
           </div>
         </section>
 
-        <section className="people-section people-section--coaches">
-          <div className="page-container">
-            <SectionHeading
-              title="Notable former GSC coaches"
-              nowrap
-            />
-
-            <CoachesGrid
-              coaches={coaches}
-              ariaLabel="Notable former GSC coaches"
-            />
-          </div>
-        </section>
-
         <section className="people-section people-section--alumni">
           <div className="page-container">
             <SectionHeading title="Players and alumni" />
@@ -219,6 +232,20 @@ function App() {
             <PeopleList
               people={alumni}
               ariaLabel="GSC players and alumni"
+            />
+          </div>
+        </section>
+
+        <section className="people-section people-section--coaches">
+          <div className="page-container">
+            <SectionHeading
+              title="Notable former GSC coaches"
+              nowrap
+            />
+
+            <PeopleList
+              people={coaches}
+              ariaLabel="Notable former GSC coaches"
             />
           </div>
         </section>
