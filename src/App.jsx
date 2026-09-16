@@ -74,59 +74,95 @@ const coaches = [
 const alumni = [
   {
     name: "Cam Atkinson",
-    title: "NHL Forward",
-    description:
-      "A former GSC player who went on to a 13-season NHL career with Columbus, Philadelphia, and Tampa Bay.",
+    college: "Boston College",
+    years: "96-'98",
     highlights: [
       "809 NHL games",
       "Two-time NHL All-Star",
-      "Retired as a Columbus Blue Jacket",
+      "NHL: Columbus Blue Jackets, Philadelphia Flyers, Tampa Bay Lightning",
     ],
   },
+  { name: "Tommy Atkinson", college: "Boston College", years: "96-'98" },
+  { name: "Peter Boldt", college: "Dartmouth \"C\"", years: "92-'04" },
+  { name: "Jen Buckley", college: "Yale", years: "90-'93" },
+  { name: "John Burdett", college: "Middlebury", years: "2010's" },
+  { name: "Amy Catlin", college: "Dartmouth", years: "93-'96" },
+  { name: "Tracy Catlin", college: "Harvard", years: "93-'96" },
+  { name: "Dan Cleaves", college: "Middlebury \"C\"", years: "70's" },
+  { name: "Gene Cleaves", college: "Middlebury \"C\"", years: "68-'75" },
+  { name: "Hank Cleaves", college: "Dartmouth College", years: "GSC Mites", highlights: ["Vernon Vipers (BCHL)"] },
+  {
+    name: "Cooper Cleaves",
+    college: "Dartmouth College",
+    years: "GSC Mites",
+    highlights: [
+      "Green Bay Gamblers (USHL)",
+      "Drafted by Montreal Canadiens, 2026 NHL Draft",
+    ],
+  },
+  { name: "Nina Daughtery", college: "Middlebury", years: "93-'01" },
+  { name: "Lacey Farrell", college: "Middlebury", years: "93-'01" },
+  { name: "Brett Farson", college: "Amherst", years: "86-'94" },
+  { name: "Richie Fuld", college: "Middlebury", years: "91-'99" },
+  { name: "Chrissie Fuld", college: "Middlebury", years: "93-'96" },
+  { name: "Bobby Gillon", college: "Trinity", years: "86-'93" },
   {
     name: "John Hayden",
-    title: "Professional Forward",
-    description:
-      "A GSC youth hockey alumnus who advanced through Yale and into a professional career in the NHL and AHL.",
+    college: "Yale \"C\"",
+    years: "98-'99",
     highlights: [
-      "NHL and AHL experience",
-      "Former Yale captain",
+      "Former Yale team captain",
+      "NHL: Chicago Blackhawks, Buffalo Sabres, New Jersey Devils, Arizona Coyotes, Seattle Kraken",
       "Represented the United States internationally",
     ],
   },
+  { name: "Kathy Jones", college: "Yale", years: "80's" },
+  { name: "Leila Jones", college: "Yale", years: "80's" },
   {
     name: "Phil Kemp",
-    title: "Professional Defenseman",
-    description:
-      "A Greenwich-developed defenseman who played at Yale, represented Team USA, and reached the NHL.",
+    college: "Yale \"C\"",
+    years: "2000's",
     highlights: [
       "NHL debut in 2024",
       "2019 World Junior silver medalist",
       "Yale men's hockey captain",
     ],
   },
+  { name: "Ben Ketchum", college: "Sacred Heart", years: "95-'02" },
   {
     name: "Bray Ketchum",
-    title: "Professional Forward",
-    description:
-      "A former GSC player who competed professionally and became a championship winner in women's hockey.",
+    college: "Yale",
+    years: "96-'04",
     highlights: [
       "Clarkson Cup champion",
       "Isobel Cup champion",
       "Former Yale standout",
     ],
   },
+  { name: "Phil Lauderdale", college: "Ohio State", years: "90's" },
+  { name: "Christian LeSueur", college: "Dartmouth", years: "2000's" },
+  { name: "Luke Drury", college: "Colby College", years: "GSC Mites-Bantam" },
+  { name: "Sally Maloney", college: "Harvard", years: "93-'96" },
+  { name: "Katie O'Sullivan", college: "Yale \"C\"", years: "80's" },
+  { name: "Maggie O'Sullivan", college: "Bowdoin", years: "80's" },
   {
     name: "Helen Resor",
-    title: "U.S. Olympian",
-    description:
-      "A GSC alumna who represented the United States on the world's biggest stage and earned an Olympic medal.",
+    college: "Yale",
+    years: "01-'02",
     highlights: [
       "2006 Olympic bronze medalist",
       "Two-time IIHF World Champion",
       "Former Yale defenseman",
     ],
   },
+  { name: "Jane Resor", college: "Yale", years: "90's" },
+  { name: "Beanie Richter", college: "Yale", years: "2010's" },
+  { name: "Wiley Sherman", college: "Harvard", years: "2000's" },
+  { name: "Spencer Sodokoff", college: "Skidmore College", years: "GSC Mites-Bantam" },
+  { name: "Nick Trepp", college: "Colby College", years: "GSC Mites-Bantam" },
+  { name: "Pamela Van Reesema", college: "Harvard", years: "93-'96" },
+  { name: "Gray Weicker", college: "St. Lawrence", years: "70's" },
+  { name: "Max Wernert", college: "Plymouth State", years: "88-'96" },
 ];
 
 function SectionHeading({ title, copy, nowrap }) {
@@ -151,7 +187,7 @@ function PeopleList({ people, ariaLabel }) {
   return (
     <div className="people-list" aria-label={ariaLabel}>
       <div className="people-list__header" aria-hidden="true">
-        <span>GSC Connection</span>
+        <span>Coach</span>
         <span>Background</span>
         <span>Career Highlights</span>
       </div>
@@ -180,6 +216,39 @@ function PeopleList({ people, ariaLabel }) {
           </ul>
         </article>
       ))}
+    </div>
+  );
+}
+
+function AlumniRoster({ alumni, ariaLabel }) {
+  return (
+    <div className="alumni-roster-frame">
+      <div className="alumni-roster" aria-label={ariaLabel}>
+        <div className="alumni-roster__header" aria-hidden="true">
+          <span>Name</span>
+          <span>College</span>
+          <span>GSC Tenure/Team</span>
+        </div>
+
+        {alumni.map((person) => (
+          <div className="alumni-roster__row" key={person.name}>
+            <span className="alumni-roster__name">{person.name}</span>
+            <span className="alumni-roster__college">{person.college}</span>
+            <span className="alumni-roster__years">{person.years}</span>
+
+            {person.highlights && (
+              <ul className="alumni-roster__highlights">
+                {person.highlights.map((highlight) => (
+                  <li key={highlight}>
+                    <span aria-hidden="true" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -227,11 +296,11 @@ function App() {
 
         <section className="people-section people-section--alumni">
           <div className="page-container">
-            <SectionHeading title="Players and alumni" />
+            <SectionHeading title="Alumni Players" />
 
-            <PeopleList
-              people={alumni}
-              ariaLabel="GSC players and alumni"
+            <AlumniRoster
+              alumni={alumni}
+              ariaLabel="GSC alumni roster"
             />
           </div>
         </section>
@@ -239,13 +308,13 @@ function App() {
         <section className="people-section people-section--coaches">
           <div className="page-container">
             <SectionHeading
-              title="Notable former GSC coaches"
+              title="Notable Current and Former GSC Coaches"
               nowrap
             />
 
             <PeopleList
               people={coaches}
-              ariaLabel="Notable former GSC coaches"
+              ariaLabel="Notable current and former GSC coaches"
             />
           </div>
         </section>
