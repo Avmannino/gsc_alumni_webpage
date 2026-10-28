@@ -534,8 +534,7 @@
 
   grid-template-columns:
     minmax(200px, 1.4fr)
-    minmax(160px, 1.1fr)
-    minmax(110px, 0.7fr);
+    minmax(160px, 1.1fr);
 
   column-gap: 42px;
   align-items: center;
@@ -586,8 +585,7 @@
   line-height: 1.4;
 }
 
-.alumni-roster__college,
-.alumni-roster__years {
+.alumni-roster__college {
   color: var(--gsc-muted);
 
   font-size: 0.85rem;
@@ -735,7 +733,7 @@
   }
 
   .alumni-roster__row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     row-gap: 4px;
 
     padding: 14px 0;

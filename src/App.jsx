@@ -100,7 +100,7 @@ const alumni = [
       "Drafted by Montreal Canadiens, 2026 NHL Draft",
     ],
   },
-  { name: "Nina Daughtery", college: "Middlebury", years: "93-'01" },
+  { name: "Nina Daugherty", college: "Middlebury", years: "93-'01" },
   { name: "Lacey Farrell", college: "Middlebury", years: "93-'01" },
   { name: "Brett Farson", college: "Amherst", years: "86-'94" },
   { name: "Richie Fuld", college: "Middlebury", years: "91-'99" },
@@ -227,14 +227,12 @@ function AlumniRoster({ alumni, ariaLabel }) {
         <div className="alumni-roster__header" aria-hidden="true">
           <span>Name</span>
           <span>College</span>
-          <span>GSC Tenure/Team</span>
         </div>
 
         {alumni.map((person) => (
           <div className="alumni-roster__row" key={person.name}>
             <span className="alumni-roster__name">{person.name}</span>
             <span className="alumni-roster__college">{person.college}</span>
-            <span className="alumni-roster__years">{person.years}</span>
 
             {person.highlights && (
               <ul className="alumni-roster__highlights">
