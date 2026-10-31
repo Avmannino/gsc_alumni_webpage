@@ -72,96 +72,43 @@ const coaches = [
 ];
 
 const alumni = [
-  {
-    name: "Cam Atkinson",
-    college: "Boston College",
-    years: "96-'98",
-    highlights: [
-      "809 NHL games",
-      "Two-time NHL All-Star",
-      "NHL: Columbus Blue Jackets, Philadelphia Flyers, Tampa Bay Lightning",
-    ],
-  },
-  { name: "Tommy Atkinson", college: "Boston College", years: "96-'98" },
-  { name: "Peter Boldt", college: "Dartmouth \"C\"", years: "92-'04" },
+  { name: "Cam Atkinson", college: "Boston College", years: "96-'98", pro: ["NHL", "AHL"] },
+  { name: "Tommy Atkinson", college: "Boston College", years: "96-'98", juniors: ["EJHL"] },
+  { name: "Peter Boldt", college: "Dartmouth", years: "92-'04", pro: ["Europe"] },
   { name: "Jen Buckley", college: "Yale", years: "90-'93" },
   { name: "John Burdett", college: "Middlebury", years: "2010's" },
   { name: "Amy Catlin", college: "Dartmouth", years: "93-'96" },
   { name: "Tracy Catlin", college: "Harvard", years: "93-'96" },
-  { name: "Dan Cleaves", college: "Middlebury \"C\"", years: "70's" },
-  { name: "Gene Cleaves", college: "Middlebury \"C\"", years: "68-'75" },
-  { name: "Hank Cleaves", college: "Dartmouth College", years: "GSC Mites", highlights: ["Vernon Vipers (BCHL)"] },
-  {
-    name: "Cooper Cleaves",
-    college: "Dartmouth College",
-    years: "GSC Mites",
-    highlights: [
-      "Green Bay Gamblers (USHL)",
-      "Drafted by Montreal Canadiens, 2026 NHL Draft",
-    ],
-  },
+  { name: "Dan Cleaves", college: "Middlebury", years: "70's" },
+  { name: "Gene Cleaves", college: "Middlebury", years: "68-'75" },
+  { name: "Hank Cleaves", college: "Dartmouth College", years: "GSC Mites", juniors: ["BCHL"] },
+  { name: "Cooper Cleaves", college: "Dartmouth College", years: "GSC Mites", juniors: ["USHL"], draft: "'26 NHL Draft Pick" },
   { name: "Nina Daugherty", college: "Middlebury", years: "93-'01" },
+  { name: "Luke Drury", college: "Colby College", years: "GSC Mites-Bantam", juniors: ["USHL", "NAHL"] },
   { name: "Lacey Farrell", college: "Middlebury", years: "93-'01" },
   { name: "Brett Farson", college: "Amherst", years: "86-'94" },
   { name: "Richie Fuld", college: "Middlebury", years: "91-'99" },
   { name: "Chrissie Fuld", college: "Middlebury", years: "93-'96" },
   { name: "Bobby Gillon", college: "Trinity", years: "86-'93" },
-  {
-    name: "John Hayden",
-    college: "Yale \"C\"",
-    years: "98-'99",
-    highlights: [
-      "Former Yale team captain",
-      "NHL: Chicago Blackhawks, Buffalo Sabres, New Jersey Devils, Arizona Coyotes, Seattle Kraken",
-      "Represented the United States internationally",
-    ],
-  },
+  { name: "John Hayden", college: "Yale", years: "98-'99", intl: ["Team USA"], pro: ["NHL", "AHL"], juniors: ["USHL"] },
   { name: "Kathy Jones", college: "Yale", years: "80's" },
   { name: "Leila Jones", college: "Yale", years: "80's" },
-  {
-    name: "Phil Kemp",
-    college: "Yale \"C\"",
-    years: "2000's",
-    highlights: [
-      "NHL debut in 2024",
-      "2019 World Junior silver medalist",
-      "Yale men's hockey captain",
-    ],
-  },
-  { name: "Ben Ketchum", college: "Sacred Heart", years: "95-'02" },
-  {
-    name: "Bray Ketchum",
-    college: "Yale",
-    years: "96-'04",
-    highlights: [
-      "Clarkson Cup champion",
-      "Isobel Cup champion",
-      "Former Yale standout",
-    ],
-  },
+  { name: "Phil Kemp", college: "Yale", years: "2000's", intl: ["Team USA"], pro: ["NHL", "AHL"], juniors: ["USHL"] },
+  { name: "Ben Ketchum", college: "Sacred Heart", years: "95-'02", juniors: ["EJHL"] },
+  { name: "Bray Ketchum", college: "Yale", years: "96-'04", pro: ["CWHL", "NWHL"] },
   { name: "Phil Lauderdale", college: "Ohio State", years: "90's" },
   { name: "Christian LeSueur", college: "Dartmouth", years: "2000's" },
-  { name: "Luke Drury", college: "Colby College", years: "GSC Mites-Bantam" },
   { name: "Sally Maloney", college: "Harvard", years: "93-'96" },
-  { name: "Katie O'Sullivan", college: "Yale \"C\"", years: "80's" },
+  { name: "Katie O'Sullivan", college: "Yale", years: "80's" },
   { name: "Maggie O'Sullivan", college: "Bowdoin", years: "80's" },
-  {
-    name: "Helen Resor",
-    college: "Yale",
-    years: "01-'02",
-    highlights: [
-      "2006 Olympic bronze medalist",
-      "Two-time IIHF World Champion",
-      "Former Yale defenseman",
-    ],
-  },
+  { name: "Helen Resor", college: "Yale", years: "01-'02", intl: ["Team USA"] },
   { name: "Jane Resor", college: "Yale", years: "90's" },
-  { name: "Beanie Richter", college: "Yale", years: "2010's" },
-  { name: "Wiley Sherman", college: "Harvard", years: "2000's" },
+  { name: "Beanie Richter", college: "Yale", years: "2010's", juniors: ["BCHL"] },
+  { name: "Wiley Sherman", college: "Harvard", years: "2000's", pro: ["AHL", "Europe"] },
   { name: "Spencer Sodokoff", college: "Skidmore College", years: "GSC Mites-Bantam" },
   { name: "Nick Trepp", college: "Colby College", years: "GSC Mites-Bantam" },
   { name: "Pamela Van Reesema", college: "Harvard", years: "93-'96" },
-  { name: "Gray Weicker", college: "St. Lawrence", years: "70's" },
+  { name: "Gray Weicker", college: "St. Lawrence", years: "70's", pro: ["AHL", "ACHL"] },
   { name: "Max Wernert", college: "Plymouth State", years: "88-'96" },
 ];
 
@@ -226,24 +173,23 @@ function AlumniRoster({ alumni, ariaLabel }) {
       <div className="alumni-roster" aria-label={ariaLabel}>
         <div className="alumni-roster__header" aria-hidden="true">
           <span>Name</span>
-          <span>College</span>
+          <span>Playing Experience</span>
         </div>
 
         {alumni.map((person) => (
           <div className="alumni-roster__row" key={person.name}>
             <span className="alumni-roster__name">{person.name}</span>
-            <span className="alumni-roster__college">{person.college}</span>
-
-            {person.highlights && (
-              <ul className="alumni-roster__highlights">
-                {person.highlights.map((highlight) => (
-                  <li key={highlight}>
-                    <span aria-hidden="true" />
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            )}
+            <span className="alumni-roster__college">
+              {[
+                ...(person.intl || []),
+                ...(person.pro || []),
+                person.college,
+                ...(person.juniors || []),
+                person.draft,
+              ]
+                .filter(Boolean)
+                .join(", ")}
+            </span>
           </div>
         ))}
       </div>

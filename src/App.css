@@ -594,42 +594,6 @@
   line-height: 1.4;
 }
 
-.alumni-roster__highlights {
-  grid-column: 1 / -1;
-
-  display: grid;
-  gap: 6px;
-
-  margin: 12px 0 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.alumni-roster__highlights li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-
-  color: var(--gsc-text);
-
-  font-size: 0.76rem;
-  font-weight: 700;
-  line-height: 1.45;
-}
-
-.alumni-roster__highlights li span {
-  width: 6px;
-  height: 6px;
-  flex: 0 0 auto;
-
-  margin-top: 4px;
-
-  border-radius: 50%;
-
-  background: var(--gsc-red);
-}
-
 /* ------------------------------
    CLOSING
 ------------------------------ */
